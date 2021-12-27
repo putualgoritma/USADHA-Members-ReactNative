@@ -213,7 +213,7 @@ const Dashboard = ({navigation}) => {
         </View>
         <View style={styles.line}/>
         <View style={{width : '100%',
-            height : '85%',
+            height : '100%',
             padding : 5,
             flexDirection : 'row',
             flexWrap : 'wrap',
@@ -224,7 +224,8 @@ const Dashboard = ({navigation}) => {
             productimg  = productimg.replace("/public", "");
           }
           return(
-            <TouchableOpacity style={{width : '50%', backgroundColor : '#ffffff', height : 300, padding : 5, marginBottom : 5,}} onPress ={() => navigation.navigate('DetailProduct', {id: product.id})} key={product.id}>
+            <>
+            <TouchableOpacity style={{width : '50%', backgroundColor :'#FFFFFF', height : 300, padding : 5, marginBottom : 15,}} onPress ={() => navigation.navigate('DetailProduct', {id: product.id})} key={product.id}>
               <View style={{ padding : 5, height :290, borderRadius : 3, borderWidth : 0.1, borderColor : colors.disable, backgroundColor:'#f9fcfb'}}>
                 <View style={{flex:1}}>
                   <Text style={{marginTop : 8, fontWeight : 'bold'}}>{product.name}</Text>
@@ -242,9 +243,12 @@ const Dashboard = ({navigation}) => {
                 </View> */}
               </View>
             </TouchableOpacity>
+          
+            </>
           )
          })}
         </View>
+        <View style={{marginBottom:15}}></View>
       </ScrollView>
     </View>
   );
@@ -253,7 +257,8 @@ const Dashboard = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor : '#ffffff'
+    // backgroundColor: 'red',
+    height:'100%',
   },
   scrollView: {
     flex: 1,
